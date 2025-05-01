@@ -2,12 +2,12 @@ const d = document;
 
 d.addEventListener("mousemove", e => {
   let $soap = d.querySelector(".soap");
-  $soap.style.left = (e.pageX) + "px";
-  $soap.style.top = (e.pageY) + "px";
+  $soap.style.left = (e.clientX) + "px";
+  $soap.style.top = (e.clientY) + "px";
 
   let $i = d.createElement("i");
-  $i.style.left = (e.pageX) + "px";
-  $i.style.top = (e.pageY) + "px";
+  $i.style.left = (e.clientX) + "px";
+  $i.style.top = (e.clientY) + "px";
   $i.style.scale = `${Math.random() * 2 + 1}`;
   let getRandomPosition = () => {
     return `${Math.random() * 400 - 200}px`;
@@ -20,5 +20,3 @@ d.addEventListener("mousemove", e => {
     d.body.removeChild($i);
   }, 2000)
 });
-
-console.log("Based in ->", "https://youtu.be/KOIcGgJX3ow?si=I544OXrFgLaWO-3F");
